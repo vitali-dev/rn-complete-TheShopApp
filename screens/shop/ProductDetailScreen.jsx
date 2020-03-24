@@ -8,6 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 import { useSelector } from 'react-redux';
+import Colors from '../../constants/Colors';
 
 import Colors from '../../constants/Colors';
 
@@ -24,7 +25,7 @@ const ProductDetailSceen = props => {
         <Button color={Colors.primary} title='Add to Cart' onPress={() => {}} />
       </View>
       <Text style={styles.price}>${selectedProduct.price.toFixed(2)}</Text>
-      <Text style={styles.description}>${selectedProduct.description}</Text>
+      <Text style={styles.description}>{selectedProduct.description}</Text>
     </ScrollView>
   );
 };
@@ -39,6 +40,10 @@ const styles = StyleSheet.create({
   image: {
     width: '100%',
     height: 300,
+  },
+  actions: {
+    marginVertical: 10,
+    alignItems: 'center',
   },
   price: {
     fontSize: 20,
