@@ -10,12 +10,10 @@ import {
 import { useSelector } from 'react-redux';
 import Colors from '../../constants/Colors';
 
-import Colors from '../../constants/Colors';
-
-const ProductDetailSceen = props => {
+const ProductDetailSceen = (props) => {
   const productId = props.route.params ? props.route.params.productId : null;
-  const selectedProduct = useSelector(state =>
-    state.products.availableProducts.find(prod => prod.id === productId)
+  const selectedProduct = useSelector((state) =>
+    state.products.availableProducts.find((prod) => prod.id === productId)
   );
 
   return (
@@ -30,7 +28,7 @@ const ProductDetailSceen = props => {
   );
 };
 
-export const screenOptions = navData => {
+export const screenOptions = (navData) => {
   return {
     headerTitle: navData.route.params.productTitle,
   };
